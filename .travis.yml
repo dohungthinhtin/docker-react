@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dohungthinhtin/docker-react -f Dockerfile.dev
+
+script:
+  - docker run dohungthinhtin/docker-react npm run test -- --coverage
